@@ -1,0 +1,21 @@
+.input_fields{
+    width: 100% !important;
+    border-color: red;
+}
+
+.input_fields > label{
+    color: #4dabf5;
+}
+
+.input_fields fieldset,
+.input_fields input,
+.input_fields textarea,
+.input_fields:hover > label,
+.input_fields .MuiInputBase-formControl:hover fieldset{
+    color: #4dabf5;
+    border-color: #4dabf5;
+}
+
+.btn{
+    margin-top: 20px !important;
+}
