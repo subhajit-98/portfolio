@@ -8,6 +8,7 @@ import WorkIcon from '@material-ui/icons/Work';
 import ContactMailIcon from '@material-ui/icons/ContactMail';
 import ExtensionRoundedIcon from '@material-ui/icons/ExtensionRounded';
 import AppsRoundedIcon from '@material-ui/icons/AppsRounded';
+import MarkunreadMailboxRoundedIcon from '@material-ui/icons/MarkunreadMailboxRounded';
 import './Menu.css';
 
 const Menu = () => {
@@ -64,7 +65,17 @@ const Menu = () => {
                         </MenuItem>
                     </NavLink>
                 </MenuList>
-                <MenuList className="menuList">
+                <MenuList className="menuList" onClick={() => { setMenu(!menu) }}>
+                    <NavLink to="/blog">
+                        <MenuItem>
+                            <ListItemIcon>
+                                <MarkunreadMailboxRoundedIcon fontSize="small"  style={{color: 'white'}} />
+                            </ListItemIcon>
+                            <Typography variant="inherit">Blog </Typography>
+                        </MenuItem>
+                    </NavLink>
+                </MenuList>
+                <MenuList className="menuList" onClick={() => { setMenu(!menu) }}>
                     <NavLink to="/contact">
                         <MenuItem>
                             <ListItemIcon>

@@ -1,6 +1,7 @@
 import Menu from './Component/Menu/Menu';
 import HomePage from './Component/HomePage/HomePage';
 import AboutPage from './Component/AboutPage/AboutPage'
+import Contact from './Component/Contact/Contact';
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 import './App.css';
 
@@ -12,6 +13,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={ HomePage } />
           <Route path="/about" exact component={ AboutPage } />
+          <Route path="/contact" exact component={ Contact } />
         </Switch>
       </BrowserRouter>
     </div>
