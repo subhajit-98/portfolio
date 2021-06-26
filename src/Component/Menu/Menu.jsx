@@ -3,12 +3,12 @@ import {NavLink} from "react-router-dom";
 import { AppBar, Toolbar, IconButton, Drawer, MenuList, MenuItem, ListItemIcon, Typography } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import InfoIcon from '@material-ui/icons/Info';
-import MicIcon from '@material-ui/icons/Mic';
 import WorkIcon from '@material-ui/icons/Work';
 import ContactMailIcon from '@material-ui/icons/ContactMail';
 import ExtensionRoundedIcon from '@material-ui/icons/ExtensionRounded';
 import AppsRoundedIcon from '@material-ui/icons/AppsRounded';
 import MarkunreadMailboxRoundedIcon from '@material-ui/icons/MarkunreadMailboxRounded';
+import SchoolRoundedIcon from '@material-ui/icons/SchoolRounded';
 import './Menu.css';
 
 const Menu = () => {
@@ -62,6 +62,16 @@ const Menu = () => {
                                 <WorkIcon fontSize="small"  style={{color: 'white'}} />
                             </ListItemIcon>
                             <Typography variant="inherit">Work Experience </Typography>
+                        </MenuItem>
+                    </NavLink>
+                </MenuList>
+                <MenuList className="menuList">
+                    <NavLink to="/education">
+                        <MenuItem>
+                            <ListItemIcon>
+                                <SchoolRoundedIcon fontSize="small"  style={{color: 'white'}} />
+                            </ListItemIcon>
+                            <Typography variant="inherit">Education </Typography>
                         </MenuItem>
                     </NavLink>
                 </MenuList>
