@@ -19,8 +19,8 @@
     border-bottom: 2px solid rgb(241, 241, 241);
 }
 
-.menuList > a .active{
-    background-color: #696666 !important;
+.menuList > .active>li{
+    color: #a8a6a6 !important;
 }
 
 .MuiDrawer-paperAnchorLeft{

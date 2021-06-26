@@ -1,18 +1,20 @@
 import React, { useState } from "react"
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import { AppBar, Toolbar, IconButton, Drawer, MenuList, MenuItem, ListItemIcon, Typography } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import InfoIcon from '@material-ui/icons/Info';
 import MicIcon from '@material-ui/icons/Mic';
 import WorkIcon from '@material-ui/icons/Work';
 import ContactMailIcon from '@material-ui/icons/ContactMail';
+import ExtensionRoundedIcon from '@material-ui/icons/ExtensionRounded';
+import AppsRoundedIcon from '@material-ui/icons/AppsRounded';
 import './Menu.css';
 
 const Menu = () => {
     const [menu, setMenu] = useState(false);
     return (
         <>
-            <AppBar position="static" className="menu_background">
+            <AppBar position="fixed" className="menu_background">
                 <Toolbar>
                     <IconButton edge="start" aria-label="menu" className="menu_icon" onClick={() => { setMenu(!menu) }} >
                         <MenuIcon />
@@ -22,37 +24,58 @@ const Menu = () => {
             <Drawer anchor="left" open={menu} onClose={() => { setMenu(!menu) }}>
                         
                 {/* <div style={{minWidth: '200px'}}>asdas</div> */}
-                <MenuList className="menuList">
-                    <Link to="/about">
+                <MenuList className="menuList" onClick={() => { setMenu(!menu) }}>
+                    <NavLink to="/" exact>
+                        <MenuItem>
+                            <ListItemIcon>
+                                <AppsRoundedIcon fontSize="small"  style={{color: 'white'}} />
+                            </ListItemIcon>
+                            <Typography variant="inherit">Home</Typography>
+                        </MenuItem>
+                    </NavLink>
+                </MenuList>
+                <MenuList className="menuList" onClick={() => { setMenu(!menu) }}>
+                    <NavLink to="/about">
                         <MenuItem>
                             <ListItemIcon>
                                 <InfoIcon fontSize="small"  style={{color: 'white'}} />
                             </ListItemIcon>
                             <Typography variant="inherit">About Me</Typography>
                         </MenuItem>
-                    </Link>
+                    </NavLink>
                 </MenuList>
                 <MenuList className="menuList">
-                    <Link to="/work-experience">
+                    <NavLink to="/projects">
+                        <MenuItem>
+                            <ListItemIcon>
+                                <ExtensionRoundedIcon fontSize="small"  style={{color: 'white'}} />
+                            </ListItemIcon>
+                            <Typography variant="inherit">Projects</Typography>
+                        </MenuItem>
+                    </NavLink>
+                </MenuList>
+                <MenuList className="menuList">
+                    <NavLink to="/work-experience">
                         <MenuItem>
                             <ListItemIcon>
                                 <WorkIcon fontSize="small"  style={{color: 'white'}} />
                             </ListItemIcon>
                             <Typography variant="inherit">Work Experience </Typography>
                         </MenuItem>
-                    </Link>
+                    </NavLink>
                 </MenuList>
                 <MenuList className="menuList">
-                    <Link to="/contact">
+                    <NavLink to="/contact">
                         <MenuItem>
                             <ListItemIcon>
                                 <ContactMailIcon fontSize="small"  style={{color: 'white'}} />
                             </ListItemIcon>
                             <Typography variant="inherit">Contact </Typography>
                         </MenuItem>
-                    </Link>
+                    </NavLink>
                 </MenuList>
             </Drawer>
+            <div style={{width: "100%", height: "66px"}}></div>
         </>
     )
 }
