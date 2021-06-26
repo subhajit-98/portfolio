@@ -1,4 +1,4 @@
-import { Container, Grid, TextField, Button, Typography } from '@material-ui/core';
+import { Container, Grid, TextField, Button, Typography, Box } from '@material-ui/core';
 import SendRoundedIcon from '@material-ui/icons/SendRounded';
 import './Contact.css';
 
@@ -6,7 +6,7 @@ const Contact = () => {
     return (
         <Container maxWidth="sm" style={{marginTop: '40px'}}>
             <Typography variant="h4" component="h2" style={{textAlign: 'center', marginBottom: '15px'}}>
-                Contact
+                <Box color="secondary.main">Contact </Box>
             </Typography>
             <form fullWidth noValidate autoComplete="off" variant="outlined">
                 <Grid container spacing={2}>
