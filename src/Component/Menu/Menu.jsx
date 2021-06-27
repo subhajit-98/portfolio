@@ -55,7 +55,7 @@ const Menu = () => {
                         </MenuItem>
                     </NavLink>
                 </MenuList>
-                <MenuList className="menuList">
+                <MenuList className="menuList" onClick={() => { setMenu(!menu) }}>
                     <NavLink to="/work-experience">
                         <MenuItem>
                             <ListItemIcon>

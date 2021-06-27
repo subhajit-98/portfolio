@@ -16,7 +16,7 @@ const Education = () => {
                     <Timeline align="alternate">
                         <TimelineItem>
                             <TimelineOppositeContent>
-                                <Typography variant="body2" color="text.primar">2013</Typography>
+                                <Typography variant="body2" color="text.primar">2021</Typography>
                             </TimelineOppositeContent>
                             <TimelineSeparator>
                                 <TimelineDot variant="outlined" />
@@ -24,23 +24,8 @@ const Education = () => {
                             </TimelineSeparator>
                             <TimelineContent>
                                 <Paper elevation={3} className="education_background">
-                                    <Typography variant="h6" component="h1">10<sup>th</sup> Stands</Typography>
-                                    <Typography>Naktala High School</Typography>
-                                </Paper>
-                            </TimelineContent>
-                        </TimelineItem>
-                        <TimelineItem>
-                            <TimelineOppositeContent>
-                            <Typography variant="body2" color="primary">2015</Typography>
-                            </TimelineOppositeContent>
-                            <TimelineSeparator>
-                                <TimelineDot  variant="outlined" color="primary" />
-                                <TimelineConnector className="lineHeight" />
-                            </TimelineSeparator>
-                            <TimelineContent>
-                                <Paper elevation={3} className="education_background">
-                                    <Typography variant="h6" component="h1">12<sup>th</sup> Stands</Typography>
-                                    <Typography>Khanput H.L. High School</Typography>
+                                    <Typography variant="h6" component="h1">Master's of Computer Applications (MCA)</Typography>
+                                    <Typography>Future Institute of Engneering and Management</Typography>
                                 </Paper>
                             </TimelineContent>
                         </TimelineItem>
@@ -61,15 +46,30 @@ const Education = () => {
                         </TimelineItem>
                         <TimelineItem>
                             <TimelineOppositeContent>
-                                <Typography variant="body2" color="text.primar">2021</Typography>
+                            <Typography variant="body2" color="primary">2015</Typography>
+                            </TimelineOppositeContent>
+                            <TimelineSeparator>
+                                <TimelineDot  variant="outlined" color="primary" />
+                                <TimelineConnector className="lineHeight" />
+                            </TimelineSeparator>
+                            <TimelineContent>
+                                <Paper elevation={3} className="education_background">
+                                    <Typography variant="h6" component="h1">12<sup>th</sup> Stands</Typography>
+                                    <Typography>Khanput H.L. High School</Typography>
+                                </Paper>
+                            </TimelineContent>
+                        </TimelineItem>
+                        <TimelineItem>
+                            <TimelineOppositeContent>
+                                <Typography variant="body2" color="text.primar">2013</Typography>
                             </TimelineOppositeContent>
                             <TimelineSeparator>
                                 <TimelineDot variant="outlined" />
                             </TimelineSeparator>
                             <TimelineContent>
                                 <Paper elevation={3} className="education_background">
-                                    <Typography variant="h6" component="h1">Master's of Computer Applications (MCA)</Typography>
-                                    <Typography>Future Institute of Engneering and Management</Typography>
+                                    <Typography variant="h6" component="h1">10<sup>th</sup> Stands</Typography>
+                                    <Typography>Naktala High School</Typography>
                                 </Paper>
                             </TimelineContent>
                         </TimelineItem>

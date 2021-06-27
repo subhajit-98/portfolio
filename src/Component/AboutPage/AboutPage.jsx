@@ -12,9 +12,6 @@ const AboutPage = () => {
         <Container maxWidth="xl">
             <PageTitle title="About" />
             <Grid container spacing={2}>
-                <Grid item xs={12}>
-                    Show Image
-                </Grid>
                 <Grid xs={12}>
                     <Timeline align="alternate">
                         <TimelineItem>
