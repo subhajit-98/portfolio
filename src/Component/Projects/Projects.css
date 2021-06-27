@@ -1,0 +1,8 @@
+.changeModalTheme .MuiDialog-paper{
+    background-color: #424242 !important;
+}
+
+.changeModalTheme .modalTitle,
+.changeModalTheme .modalContent{
+    color: white;
+}
