@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import PageTitle from '../../Container/PageTitle/PageTitle'
 import { Container, Grid, Paper, Card, CardActionArea, CardActions, CardContent, CardMedia, Button, Typography, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, useMediaQuery } from '@material-ui/core';
-import { useTheme } from '@material-ui/core/styles';
 import './Projects.css';
 
 const Projects = () => {
-    const theme = useTheme();
     const [modal, setModal] = useState(false);
 
     const handleClose = () => {
@@ -83,7 +81,7 @@ const Projects = () => {
                     </Grid>
                 </Grid>
             </Container>
-            <Dialog className="changeModalTheme" fullScreen={useMediaQuery(theme.breakpoints.down('sm'))} open={modal} aria-labelledby="responsive-dialog-title" onClose={ handleClose } >
+            <Dialog className="changeModalTheme" open={modal} aria-labelledby="responsive-dialog-title" onClose={ handleClose } >
                 <DialogTitle id="responsive-dialog-title" className="modalTitle">{"Use Google's location service?"}</DialogTitle>
                 <DialogContent>
                     <DialogContentText className="modalContent">
