@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PageTitle from '../../Container/PageTitle/PageTitle'
 import { Container, Grid, Paper, Card, CardActionArea, CardActions, CardContent, CardMedia, Button, Typography, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, useMediaQuery } from '@material-ui/core';
 import { useTheme } from '@material-ui/core/styles';
 import './Projects.css';
@@ -18,6 +19,7 @@ const Projects = () => {
     return (
         <>
             <Container maxWidth="md" style={{marginTop:'15px'}}>
+                <PageTitle title="Project" />
                 <Grid container spacing={3}>
                     <Grid item xs={6} md={4}>
                         <Card style={{maxWidth: '545px'}}>

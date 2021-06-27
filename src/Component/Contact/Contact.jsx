@@ -1,13 +1,12 @@
+import PageTitle from '../../Container/PageTitle/PageTitle'
 import { Container, Grid, TextField, Button, Typography, Box } from '@material-ui/core';
 import SendRoundedIcon from '@material-ui/icons/SendRounded';
 import './Contact.css';
 
 const Contact = () => {
     return (
-        <Container maxWidth="sm" style={{marginTop: '40px'}}>
-            <Typography variant="h4" component="h2" style={{textAlign: 'center', marginBottom: '15px'}}>
-                <Box color="secondary.main">Contact </Box>
-            </Typography>
+        <Container maxWidth="sm">
+            <PageTitle title="Contact" />
             <form fullWidth noValidate autoComplete="off" variant="outlined">
                 <Grid container spacing={2}>
                     <Grid item xs={12} sm={6}>

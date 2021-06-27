@@ -1,3 +1,4 @@
+import PageTitle from '../../Container/PageTitle/PageTitle'
 import { Container, Grid, Paper, Typography , Box } from '@material-ui/core';
 import { Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineContent, TimelineDot, TimelineOppositeContent } from '@material-ui/lab';
 import FaceRoundedIcon from '@material-ui/icons/FaceRounded';
@@ -8,10 +9,8 @@ import './Education.css';
 
 const Education = () => {
     return (
-        <Container maxWidth="md" style={{marginTop: '40px'}}>
-            <Typography variant="h4" component="h2" style={{textAlign: 'center', marginBottom: '15px'}}>
-                <Box color="warning.main">Qulifications</Box>
-            </Typography>
+        <Container maxWidth="md">
+            <PageTitle title="Qulifications" />
             <Grid container spacing={2}>
                 <Grid xs={12}>
                     <Timeline align="alternate">

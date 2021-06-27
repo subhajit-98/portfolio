@@ -1,3 +1,4 @@
+import PageTitle from '../../Container/PageTitle/PageTitle'
 import { Container, Grid, Paper, Typography , Box } from '@material-ui/core';
 import { Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineContent, TimelineDot, TimelineOppositeContent } from '@material-ui/lab';
 import CodeIcon from '@material-ui/icons/Code';
@@ -5,6 +6,7 @@ import CodeIcon from '@material-ui/icons/Code';
 const WorkExperience = () => {
     return (
         <Container maxWidth="md">
+            <PageTitle title="Experience" />
             <Grid container spacing={2}>
                 <Grid xs={12}>
                     <Timeline align="alternate">

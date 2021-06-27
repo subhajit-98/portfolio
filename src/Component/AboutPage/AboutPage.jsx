@@ -1,3 +1,4 @@
+import PageTitle from '../../Container/PageTitle/PageTitle'
 import { Container, Grid, Paper, Typography  } from '@material-ui/core';
 import { Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineContent, TimelineDot, TimelineOppositeContent } from '@material-ui/lab';
 import FaceRoundedIcon from '@material-ui/icons/FaceRounded';
@@ -9,6 +10,7 @@ import './About.css';
 const AboutPage = () => {
     return (
         <Container maxWidth="xl">
+            <PageTitle title="About" />
             <Grid container spacing={2}>
                 <Grid item xs={12}>
                     Show Image
