@@ -4,6 +4,7 @@ import AboutPage from './Component/AboutPage/AboutPage'
 import Contact from './Component/Contact/Contact';
 import Education from './Component/Education/Education';
 import Projects from './Component/Projects/Projects'
+import WorkExperience from './Component/WorkExperience/WorkExperience';
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 import './App.css';
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="/contact" exact component={ Contact } />
           <Route path="/education" exact component={ Education } />
           <Route path="/projects" exact component={ Projects } />
+          <Route path="/work-experience" exact component={ WorkExperience } />
         </Switch>
       </BrowserRouter>
     </div>
