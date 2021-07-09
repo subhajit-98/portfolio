@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import PageTitle from '../../Container/PageTitle/PageTitle'
 import { Container, Grid, Paper, Card, CardActionArea, CardActions, CardContent, CardMedia, Button, Typography, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, useMediaQuery } from '@material-ui/core';
+import {NavLink} from "react-router-dom";
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import ArrowRightAltRoundedIcon from '@material-ui/icons/ArrowRightAltRounded';
+import { Helmet } from 'react-helmet';
 import './Projects.css';
 
 const Projects = () => {
@@ -16,6 +20,9 @@ const Projects = () => {
 
     return (
         <>
+            <Helmet>
+                <title>Projects - Portfolio</title>
+            </Helmet>
             <Container maxWidth="md" style={{marginTop:'15px'}}>
                 <PageTitle title="Project" />
                 <Grid container spacing={3}>
@@ -78,6 +85,18 @@ const Projects = () => {
                     </Grid>
                     <Grid item xs={3}>
                         <Paper>xs=3</Paper>
+                    </Grid>
+                </Grid>
+                <Grid container spacing={2}>
+                    <Grid xs={6}>
+                        <NavLink to="/about">
+                            <Button className="btn leftbtn" variant="outlined" color="primary" startIcon={ <ArrowBackIcon /> }>About</Button>
+                        </NavLink>
+                    </Grid>
+                    <Grid xs={6}>
+                        <NavLink to="/work-experience">
+                            <Button variant="outlined" color="primary" endIcon={ <ArrowRightAltRoundedIcon /> } className="btn rightbtn">Work Experince</Button>
+                        </NavLink>
                     </Grid>
                 </Grid>
             </Container>

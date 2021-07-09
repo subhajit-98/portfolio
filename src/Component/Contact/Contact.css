@@ -19,3 +19,8 @@
 .btn{
     margin-top: 20px !important;
 }
+
+.backBtnDiv{
+    display: flex !important;
+    justify-content: center !important;
+}

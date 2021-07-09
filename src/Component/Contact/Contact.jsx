@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import PageTitle from '../../Container/PageTitle/PageTitle'
 import { Container, Grid, TextField, Button, Typography, Box } from '@material-ui/core';
 import SendRoundedIcon from '@material-ui/icons/SendRounded';
+import {NavLink} from "react-router-dom";
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import ArrowRightAltRoundedIcon from '@material-ui/icons/ArrowRightAltRounded';
+import { Helmet } from 'react-helmet';
 import './Contact.css';
 
 const Contact = () => {
@@ -130,6 +134,9 @@ const Contact = () => {
 
     return (
         <Container maxWidth="sm">
+            <Helmet>
+                <title>Contact - Portfolio</title>
+            </Helmet>
             <PageTitle title="Contact" />
             <form fullWidth noValidate autoComplete="off" variant="outlined" onSubmit={handleSubmit}>
                 <Grid container spacing={2}>
@@ -156,6 +163,13 @@ const Contact = () => {
                         startIcon={<SendRoundedIcon />}>Send</Button>
                 </Grid>
             </form>
+            <Grid container spacing={2}>
+                <Grid xs={12} className="backBtnDiv">
+                    <NavLink to="/education">
+                        <Button className="btn" variant="outlined" color="primary" startIcon={ <ArrowBackIcon /> }>Qulifications</Button>
+                    </NavLink>
+                </Grid>
+            </Grid>
         </Container>
     )
 }

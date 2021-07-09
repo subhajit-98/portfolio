@@ -1,15 +1,22 @@
 import PageTitle from '../../Container/PageTitle/PageTitle'
-import { Container, Grid, Paper, Typography , Box } from '@material-ui/core';
+import { Container, Grid, Paper, Typography , Box, Button } from '@material-ui/core';
 import { Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineContent, TimelineDot, TimelineOppositeContent } from '@material-ui/lab';
 import FaceRoundedIcon from '@material-ui/icons/FaceRounded';
 import LocationOnRoundedIcon from '@material-ui/icons/LocationOnRounded';
 import ChildFriendlyRoundedIcon from '@material-ui/icons/ChildFriendlyRounded';
 import AppsRoundedIcon from '@material-ui/icons/AppsRounded';
+import {NavLink} from "react-router-dom";
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import ArrowRightAltRoundedIcon from '@material-ui/icons/ArrowRightAltRounded';
+import { Helmet } from 'react-helmet';
 import './Education.css';
 
 const Education = () => {
     return (
         <Container maxWidth="md">
+            <Helmet>
+                <title>Education - Portfolio</title>
+            </Helmet>
             <PageTitle title="Qulifications" />
             <Grid container spacing={2}>
                 <Grid xs={12}>
@@ -74,6 +81,18 @@ const Education = () => {
                             </TimelineContent>
                         </TimelineItem>
                     </Timeline>
+                </Grid>
+            </Grid>
+            <Grid container spacing={2}>
+                <Grid xs={6}>
+                    <NavLink to="/work-experience">
+                        <Button className="btn leftbtn" variant="outlined" color="primary" startIcon={ <ArrowBackIcon /> }>Experience</Button>
+                    </NavLink>
+                </Grid>
+                <Grid xs={6}>
+                    <NavLink to="/contact">
+                        <Button variant="outlined" color="primary" endIcon={ <ArrowRightAltRoundedIcon /> } className="btn rightbtn">Contact</Button>
+                    </NavLink>
                 </Grid>
             </Grid>
         </Container>

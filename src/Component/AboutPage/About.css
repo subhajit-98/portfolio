@@ -1,3 +1,41 @@
 .lineHeight{
     height: 100px;
 }
+
+.name_title_heading{
+    color: rgb(99 234 172);
+}
+
+.location_title_heading{
+    color: rgb(132 99 234);
+}
+
+.birthday_title_heading{
+    color: rgb(152 239 86);
+}
+
+.workon_title_heading{
+    color: #f04cfb;
+}
+
+a{
+    text-decoration: none;
+}
+
+.btn{
+    border-radius: 50px !important;
+    color: white !important;
+    font-weight: 800 !important;
+    padding: 9px 29px !important;
+    text-transform: capitalize !important;
+}
+
+.btn:hover{
+    box-shadow: 0px 0px 12px 4px rgb(63 81 181 / 50%);
+    animation-delay: 15s;
+}
+
+.leftbtn{
+    float: right;
+    margin-right: 15px !important;
+}

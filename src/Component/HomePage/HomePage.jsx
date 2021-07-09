@@ -1,12 +1,17 @@
+import { Helmet } from 'react-helmet';
 import Typewriter from 'typewriter-effect';
 import {NavLink} from "react-router-dom";
 import { Button } from '@material-ui/core';
 import ArrowRightAltRoundedIcon from '@material-ui/icons/ArrowRightAltRounded';
 import './Home.css';
+import { Title } from '@material-ui/icons';
 
 const Home = () => {
     return (
         <>
+            <Helmet>
+                <title>Home - Portfolio</title>
+            </Helmet>
             <div className="nameHeading">
                 <Typewriter
                     options={{
@@ -24,7 +29,7 @@ const Home = () => {
             <div className="buttonclass">
                 <NavLink to="/about">
                     <Button variant="outlined" color="primary" endIcon={ <ArrowRightAltRoundedIcon /> }>
-                        More Details
+                        About Me
                     </Button>
                 </NavLink>
             </div>

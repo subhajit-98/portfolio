@@ -4,6 +4,10 @@ import MoreButton from '../../Container/MoreButton/MoreButton';
 import { Container, Grid, Paper, Typography , Box,  Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Button } from '@material-ui/core';
 import { Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineContent, TimelineDot, TimelineOppositeContent } from '@material-ui/lab';
 import CodeIcon from '@material-ui/icons/Code';
+import {NavLink} from "react-router-dom";
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import ArrowRightAltRoundedIcon from '@material-ui/icons/ArrowRightAltRounded';
+import { Helmet } from 'react-helmet';
 
 const WorkExperience = () => {
     const [showModal, setShowModal] = useState(false);
@@ -20,6 +24,9 @@ const WorkExperience = () => {
 
     return (
         <>
+            <Helmet>
+                <title>Experience - Portfolio</title>
+            </Helmet>
             <Container maxWidth="md">
                 <PageTitle title="Experience" />
                 <Grid container spacing={2}>
@@ -77,6 +84,18 @@ const WorkExperience = () => {
                                 </TimelineContent>
                             </TimelineItem>                        
                         </Timeline>
+                    </Grid>
+                </Grid>
+                <Grid container spacing={2}>
+                    <Grid xs={6}>
+                        <NavLink to="/projects">
+                            <Button className="btn leftbtn" variant="outlined" color="primary" startIcon={ <ArrowBackIcon /> }>Project</Button>
+                        </NavLink>
+                    </Grid>
+                    <Grid xs={6}>
+                        <NavLink to="/education">
+                            <Button variant="outlined" color="primary" endIcon={ <ArrowRightAltRoundedIcon /> } className="btn rightbtn">Qulification</Button>
+                        </NavLink>
                     </Grid>
                 </Grid>
             </Container>
