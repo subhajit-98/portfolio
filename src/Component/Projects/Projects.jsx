@@ -8,7 +8,6 @@ import ArrowRightAltRoundedIcon from '@material-ui/icons/ArrowRightAltRounded';
 import { Helmet } from 'react-helmet';
 import axios from 'axios';
 import './Projects.css';
-import { config } from 'yargs';
 
 const Projects = () => {
     const [modal, setModal] = useState(false);
