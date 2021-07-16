@@ -15,9 +15,9 @@ import './Education.css';
 
 const Education = () => {
     const [loading, setLoading] = useState(true)
-    const [education, setEducation] = useState();
+    const [education, setEducation] = useState(null);
     useEffect(() => {
-        if(loading){
+        if(loading == true && education == null){
             axios.get(process.env.REACT_APP_API_URL+'education/')
             .then(res => {
                 // console.log(res);
@@ -31,7 +31,7 @@ const Education = () => {
             })
         }
     })
-    console.log(education, loading);
+
     return (
         <Container maxWidth="md">
             <Helmet>

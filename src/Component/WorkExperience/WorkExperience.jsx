@@ -13,7 +13,7 @@ import axios from 'axios';
 const WorkExperience = () => {
     const [showModal, setShowModal] = useState(false);
     const [loading, setLoading] = useState(true);
-    const [experience, setExperience] = useState();
+    const [experience, setExperience] = useState(null);
     const [modalContent, setModalContent] = useState({'content': ''});
 
     const handleShowModal = (id) => {
@@ -29,7 +29,7 @@ const WorkExperience = () => {
     }
 
     useEffect(() => {
-        if(loading){
+        if(loading == true && experience == null){
             axios.get(process.env.REACT_APP_API_URL+'experience/')
             .then(res => {
                 console.log(res);
