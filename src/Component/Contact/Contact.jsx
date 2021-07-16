@@ -6,9 +6,13 @@ import {NavLink} from "react-router-dom";
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import ArrowRightAltRoundedIcon from '@material-ui/icons/ArrowRightAltRounded';
 import { Helmet } from 'react-helmet';
+import axios from 'axios';
+import SnackbarAlert from '../../Container/Snackbar/Snackbar';
+import Loader from '../../Container/Loader/Loader';
 import './Contact.css';
 
 const Contact = () => {
+    const [contact, setContact] = useState({'isVisible': false, message: '', isLoading: false})
     const [formValue, setFormValue] = useState(
         {
             first_name:{
@@ -83,6 +87,26 @@ const Contact = () => {
                 prevState
             }
         )
+
+        if(prevState.first_name.isError === false && prevState.last_name.isError === false && prevState.email_id.isError === false && prevState.message.isError === false){
+            setContact({...contact, isLoading: true})
+            let form_data = {
+                "first_name": formValue.first_name.data,
+                "last_name": formValue.last_name.data,
+                "email_id": formValue.email_id.data,
+                "message": formValue.message.data
+            }
+            axios.post(process.env.REACT_APP_API_URL+'contact/', form_data)
+            .then(res=>{
+                // console.log(res); 
+                if(res.data.status == "success"){
+                    setContact({isVisible: !contact.isVisible, message: "Thank you for contact with me."});
+                }
+            })
+            .catch(res => {
+                console.log(res)
+            })
+        }
     }
 
     const onChangeHandle = (event) => {
@@ -132,11 +156,16 @@ const Contact = () => {
         }
     }
 
+    const snackbarHandle = () => {
+        setContact({isVisible: !contact.isVisible});
+    }
+
     return (
         <Container maxWidth="sm">
             <Helmet>
                 <title>Contact - Portfolio</title>
             </Helmet>
+            <SnackbarAlert open={contact.isVisible} message={contact.message} onclick={snackbarHandle} />
             <PageTitle title="Contact" />
             <form fullWidth noValidate autoComplete="off" variant="outlined" onSubmit={handleSubmit}>
                 <Grid container spacing={2}>
@@ -154,13 +183,19 @@ const Contact = () => {
                     </Grid>
                 </Grid>
                 <Grid item xs={12}>
+                { 
+                    !contact.isLoading ? 
                     <Button
                         variant="contained"
                         color="primary"
                         size="large"
                         className="btn"
                         type="submit"
-                        startIcon={<SendRoundedIcon />}>Send</Button>
+                        startIcon={<SendRoundedIcon />}
+                        disable={contact.isLoading}>Send</Button>
+                    :
+                    <Loader show={contact.isLoading} />
+                }
                 </Grid>
             </form>
             <Grid container spacing={2}>
