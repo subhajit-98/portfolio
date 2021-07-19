@@ -8,6 +8,7 @@ import WorkExperience from './Component/WorkExperience/WorkExperience';
 import Blog from './Component/Blog/Blog';
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 import './App.css';
+require('dotenv').config();
 
 function App() {
   return (
