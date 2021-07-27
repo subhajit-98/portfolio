@@ -1,0 +1,53 @@
+.img_center{
+    justify-content: center;
+    display: flex;
+}
+
+.blog_img{
+    width: 80%;
+    height: 570px;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border: 2px solid white;
+}
+
+.post_title{
+    font-size: 43px !important;
+    text-align: left;
+    font-weight: 400 !important;
+}
+
+.post_author_details{
+    width: 100%;
+    margin-top: 12px;
+    margin-bottom: 14px;
+    float: left;
+}
+
+.post_author_details > div {
+    float: left;
+}
+
+.post_author_details > span {
+    margin-top: 12px;
+}
+
+.author_name_create{
+    margin-top: 10px;
+    margin-left: 8px;
+}
+
+.author_name_create .author_name{
+    color: white;
+    font-weight: 600;
+}
+
+.blog_sperate{
+    width: 100%;
+    border: 1px solid #2b2b2b;
+}
+
+/* Post desc content style */
+.postContent{
+    
+}
