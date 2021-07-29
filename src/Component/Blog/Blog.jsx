@@ -11,6 +11,10 @@ import ShareIcon from '@material-ui/icons/Share';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import PaginationItem from '@material-ui/lab/PaginationItem';
 import FileCopyIcon from '@material-ui/icons/FileCopy';
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+import SnackbarAlert from '../../Container/Snackbar/Snackbar';
+import demo_image from './images/noImage.jpg'
+import axios from 'axios';
 import '../Projects/Projects.css';
 import './Blog.css';
 
@@ -25,17 +29,63 @@ const Blog = (props) => {
 
     // console.log(props.match.params);
 
-    const [blog, setBlog] = useState({isLoading: false});
-    const [share, setShare] = useState({isShow: false});
+    const [blog, setBlog] = useState({isLoading: true, content: {}});
+    const [share, setShare] = useState({isShow: false, blog_id: ""});
+    const [copy, setCopy] = useState({show: false})
+    const [currentPage, setCurrentPage] = useState(0);
 
-    const shareModal = () => {
+    const shareModal = (blogId) => {
+        setShare({isShow: !share.isShow, blog_id: blogId})
+    }
+    const shareModalClose = () => {
         setShare({isShow: !share.isShow})
     }
 
+    const copyLink = () => {
+        let blog_link = window.location.href+'/'+share.blog_id;     
+        setCopy({...copy, show: true});
+    }
+
+    const closeAlertMessage = () => {
+        setCopy({...copy, show: false});
+    }
+
+    const monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
+
+    /*const pageChange = () => {
+        setBlog({isLoading: true})
+    }*/
+
+    useEffect(async () => {
+        let click_current_page, blog_api_url;
+        if(Object.keys(props.match.params).length === 0){
+            click_current_page = 1;
+        }
+        else{
+            click_current_page = parseInt(props.match.params.page_no);
+        }
+
+        if(click_current_page !== currentPage){
+            setCurrentPage(click_current_page)
+            blog_api_url = "http://192.168.2.9:8000/api/v1/blog/"+click_current_page+"/";
+            await axios.get(blog_api_url)
+            .then(res => {
+                console.log(res)
+                setBlog({...blog,
+                    isLoading: false,
+                    content: res.data
+                })
+            })
+            .catch(error => {
+                console.log(error)
+            })
+        }
+    })
 
 
     return (
         <Container maxWidth="lg">
+            <SnackbarAlert open={copy.show} message="Blog Link Copy To Clipboard" onclick={closeAlertMessage} />
             <PageTitle title="Blog" />
             <Grid container spacing={2}>
                 {/* Skeleton */}
@@ -69,42 +119,46 @@ const Blog = (props) => {
                         </Card>
                     </Grid>
                 :
-                    <Grid item xs={12} md={4}>
-                        <Card style={{maxWidth: "345"}}>
-                            <CardHeader
-                                avatar={
-                                <Avatar aria-label="recipe" style={{backgroundColor: red[500]}}>
-                                    R
-                                </Avatar>
-                                }                            
-                                title="Shrimp and Chorizo Paella"
-                                subheader="September 14, 2016"
-                            />
-                            <NavLink to="/blog/content_id1234" exact>
-                            <CardMedia
-                                style={{height: "0", paddingTop: '56.25%'}}
-                                image="https://material-ui.com//static/images/cards/paella.jpg"
-                                title="Paella dish"
-                            />
-                            <CardContent>
-                                <Typography variant="body2" color="textSecondary" component="p">
-                                This impressive paella is a perfect party dish and a fun meal to cook together with your
-                                guests. Add 1 cup of frozen peas along with the mussels, if you like.
-                                </Typography>
-                            </CardContent>
-                            </NavLink>
-                            
-                            <CardActions disableSpacing>
-                                <IconButton aria-label="add to favorites">
-                                <FavoriteIcon  style={{color: red[500]}}/>
-                                    <Typography variant="body2" color="primary" component="span">(15)</Typography>
-                                </IconButton>
-                                <IconButton aria-label="share" onClick={shareModal}>
-                                    <ShareIcon />
-                                </IconButton>                       
-                            </CardActions>
-                        </Card>
-                    </Grid>
+                    blog.content.data !== undefined ? 
+                        blog.content.data.map((data, key) => (
+                            <Grid item xs={12} md={4}>
+                                <Card style={{maxWidth: "345"}}>
+                                    <CardHeader
+                                        avatar={
+                                        <Avatar aria-label="recipe" style={{backgroundColor: red[500]}}>
+                                            R
+                                        </Avatar>
+                                        }                            
+                                        title={data.blog_title}
+                                        subheader = {monthNames[new Date(data.created_at).getMonth()]+" "+new Date(data.created_at).getDate()+", "+new Date(data.created_at).getFullYear()}
+                                    />
+                                    <NavLink to={`/blog/${data.blog_id}`} exact>
+                                    <CardMedia
+                                        style={{height: "0", paddingTop: '56.25%'}}
+                                        image={data.blog_image == "" || data.blog_image === null ? demo_image : `http://192.168.2.9:8000${data.blog_image}`}
+                                        title={data.blog_title}
+                                    />
+                                    <CardContent>
+                                        <Typography variant="body2" color="textSecondary" component="p">
+                                            {data.blog_sort_desc}
+                                        </Typography>
+                                    </CardContent>
+                                    </NavLink>
+                                    
+                                    <CardActions disableSpacing>
+                                        <IconButton aria-label="add to favorites">
+                                        <FavoriteIcon />{/*  style={{color: red[500]}} */}
+                                            <Typography variant="body2" color="primary" component="span">(15)</Typography>
+                                        </IconButton>
+                                        <IconButton aria-label="share" onClick={() => (shareModal(data.blog_id))}>
+                                            <ShareIcon />
+                                        </IconButton>                       
+                                    </CardActions>
+                                </Card>
+                            </Grid>
+                        ))
+                    :
+                    ``
                 }
                 
             </Grid>
@@ -115,18 +169,20 @@ const Blog = (props) => {
                 open={share.isShow}
                 aria-labelledby="alert-dialog-title"
                 aria-describedby="alert-dialog-description"
-                onClose={shareModal}
+                onClose={shareModalClose}
             >
                 <DialogTitle id="alert-dialog-title" className="modalTitle">Share with</DialogTitle>
                 <DialogContent>
                     <DialogContentText id="alert-dialog-description" className="modalContent">
-                        <IconButton aria-label="copyLink" title="Copy link">
+                    <CopyToClipboard text={window.location.href+'/'+share.blog_id}>
+                        <IconButton aria-label="copyLink" title="Copy link" onClick={copyLink}>
                             <FileCopyIcon style={{color: 'white', fontSize: '35px'}} />
                         </IconButton>
+                    </CopyToClipboard>
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
-                    <Button color="secondary" onClick={shareModal}>
+                    <Button color="secondary" onClick={shareModalClose}>
                         Close
                     </Button>
                 </DialogActions>
@@ -136,13 +192,14 @@ const Blog = (props) => {
             : 
                 <div className="pagination">
                     {/*  page={1} */}
-                    <Pagination count={3} color="primary"
+                    <Pagination count={blog.content.total_page_no} color="primary"
                         renderItem={(item) => (
                             <PaginationItem component={Link}
-                            to={`/blog${item.page === 1 ? '' : `/page/${item.page}`}`}
+                            to={`/blog${item.page === 1 ? '' : `/page/${item.page}`}`}                            
                             {...item}
                             />
                         )}
+                        // onClick={pageChange}
                     />
                 </div>
             }
