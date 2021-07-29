@@ -124,11 +124,11 @@ const Blog = (props) => {
                             <Grid item xs={12} md={4}>
                                 <Card style={{maxWidth: "345"}}>
                                     <CardHeader
-                                        avatar={
-                                        <Avatar aria-label="recipe" style={{backgroundColor: red[500]}}>
-                                            S
-                                        </Avatar>
-                                        }                            
+                                        // avatar={
+                                        // <Avatar aria-label="recipe" style={{backgroundColor: red[500]}}>
+                                        //     S
+                                        // </Avatar>
+                                        // }                            
                                         title={data.blog_title}
                                         subheader = {monthNames[new Date(data.created_at).getMonth()]+" "+new Date(data.created_at).getDate()+", "+new Date(data.created_at).getFullYear()}
                                     />
