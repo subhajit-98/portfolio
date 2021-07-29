@@ -6,6 +6,7 @@ import Education from './Component/Education/Education';
 import Projects from './Component/Projects/Projects'
 import WorkExperience from './Component/WorkExperience/WorkExperience';
 import Blog from './Component/Blog/Blog';
+import Blogdetails from './Component/Blog/BlogDetils';
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 import './App.css';
 require('dotenv').config();
@@ -23,6 +24,8 @@ function App() {
           <Route path="/projects" exact component={ Projects } />
           <Route path="/work-experience" exact component={ WorkExperience } />
           <Route path="/blog" exact component={ Blog } />
+          <Route path="/blog/page/:page_no" component={ Blog } />
+          <Route path="/blog/:content_id" exact component={ Blogdetails } />
         </Switch>
       </BrowserRouter>
     </div>
