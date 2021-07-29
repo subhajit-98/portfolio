@@ -126,7 +126,7 @@ const Blog = (props) => {
                                     <CardHeader
                                         avatar={
                                         <Avatar aria-label="recipe" style={{backgroundColor: red[500]}}>
-                                            R
+                                            S
                                         </Avatar>
                                         }                            
                                         title={data.blog_title}
