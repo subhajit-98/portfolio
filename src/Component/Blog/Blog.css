@@ -9,3 +9,7 @@
 .pagination ul > li > div{
     color: white;
 }
+
+.MuiCardHeader-title {
+    font-size: 28px;
+}

@@ -139,7 +139,7 @@ const Blog = (props) => {
                                         title={data.blog_title}
                                     />
                                     <CardContent>
-                                        <Typography variant="body2" color="textSecondary" component="p">
+                                        <Typography variant="body2" color="textSecondary" component="p" style={{color: 'black', fontSize: '16px'}}>
                                             {data.blog_sort_desc}
                                         </Typography>
                                     </CardContent>
