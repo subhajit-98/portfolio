@@ -12,7 +12,7 @@ const Blogdetails = (props) => {
     console.log(props.match.params);
     useEffect(async() => {
         if(blog.isLoading){
-            await axios.get("http://192.168.2.9:8000/api/v1/blog/"+props.match.params.content_id+"/")
+            await axios.get(process.env.REACT_APP_API_URL+"blog/"+props.match.params.content_id+"/")
             .then(res => {
                 // console.log(res)
                 setBlog({...blog,
@@ -43,7 +43,7 @@ const Blogdetails = (props) => {
                     <Grid container spacing={2}>
                         <Grid item xs={12} md={12} className="img_center">
                             <div className='blog_img'>
-                                <img src={data.blog_image == "" || data.blog_image === null ? demo_image :`http://192.168.2.9:8000${data.blog_image}`}/>
+                                <img src={data.blog_image == "" || data.blog_image === null ? demo_image :data.blog_image}/>
                             </div>
                         </Grid>
                     </Grid>

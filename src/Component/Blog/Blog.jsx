@@ -67,7 +67,7 @@ const Blog = (props) => {
 
         if(click_current_page !== currentPage){
             setCurrentPage(click_current_page)
-            blog_api_url = "http://192.168.2.9:8000/api/v1/blog/"+click_current_page+"/";
+            blog_api_url = process.env.REACT_APP_API_URL+"blog/"+click_current_page+"/";
             await axios.get(blog_api_url)
             .then(res => {
                 console.log(res)
@@ -135,7 +135,7 @@ const Blog = (props) => {
                                     <NavLink to={`/blog/${data.blog_id}`} exact>
                                     <CardMedia
                                         style={{height: "0", paddingTop: '56.25%'}}
-                                        image={data.blog_image == "" || data.blog_image === null ? demo_image : `http://192.168.2.9:8000${data.blog_image}`}
+                                        image={data.blog_image == "" || data.blog_image === null ? demo_image : data.blog_image}
                                         title={data.blog_title}
                                     />
                                     <CardContent>
