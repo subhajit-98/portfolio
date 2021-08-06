@@ -3,6 +3,7 @@ import { Container, Grid, Hidden, Button, Typography, Backdrop, CircularProgress
 import { deepPurple } from '@material-ui/core/colors';
 import demo_image from './images/noImage.jpg';
 import axios from 'axios';
+import Error404 from '../Error/Error404';
 import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
 import './BlogDetails.css';
 
@@ -76,13 +77,24 @@ const Blogdetails = (props) => {
                         </Grid>
                         <Hidden only="xs">
                             <Grid item md={2}>
-                                <div style={{width: '100%'}}>{/* Advatice */}</div>
+                                <div style={{width: '100%'}}>
+                                    <amp-ad width="100vw" height="320"
+                                        type="adsense"
+                                        data-ad-client="ca-pub-4195448583090836"
+                                        data-ad-slot="8016850265"
+                                        data-auto-format="rspv"
+                                        data-full-width="">
+                                        <div overflow=""></div>
+                                    </amp-ad>
+                                </div>
                             </Grid>
                         </Hidden>
                     </Grid>
                 </div>
             ))
-            :'Something wrong'}
+            :                
+                <Error404 />
+            }
             
         </Container>
     )    
