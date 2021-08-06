@@ -36,6 +36,10 @@ const Education = () => {
         <Container maxWidth="md">
             <Helmet>
                 <title>Education - Portfolio</title>
+                <meta property="og:title" content="My education details." />
+                <meta property="og:image" content="http://www.techninetyeight.com/static/media/logo512.png" />
+                <meta property="description" content="Subhajit Dey - Portfolio" />
+                <meta property="og:url" content="http://www.techninetyeight.com/education" />
             </Helmet>
             <PageTitle title="Qulifications" />
             <Grid container spacing={2}>

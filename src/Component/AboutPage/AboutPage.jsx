@@ -16,6 +16,10 @@ const AboutPage = () => {
         <Container maxWidth="xl">
             <Helmet>
                 <title>About - Portfolio</title>
+                <meta property="og:title" content="My basic bio data" />
+                <meta property="og:image" content="http://www.techninetyeight.com/static/media/logo512.png" />
+                <meta property="description" content="Subhajit Dey - Portfolio" />
+                <meta property="og:url" content="http://www.techninetyeight.com/about" />
             </Helmet>
             <PageTitle title="About" />
             <Grid container spacing={2}>
