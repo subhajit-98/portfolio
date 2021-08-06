@@ -3,6 +3,7 @@ import { Container, Grid, Hidden, Button, Typography, Backdrop, CircularProgress
 import { deepPurple } from '@material-ui/core/colors';
 import demo_image from './images/noImage.jpg';
 import axios from 'axios';
+import Error404 from '../Error/Error404';
 import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
 import './BlogDetails.css';
 
@@ -91,7 +92,9 @@ const Blogdetails = (props) => {
                     </Grid>
                 </div>
             ))
-            :'Something wrong'}
+            :                
+                <Error404 />
+            }
             
         </Container>
     )    
