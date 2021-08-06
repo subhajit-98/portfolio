@@ -76,7 +76,16 @@ const Blogdetails = (props) => {
                         </Grid>
                         <Hidden only="xs">
                             <Grid item md={2}>
-                                <div style={{width: '100%'}}>{/* Advatice */}</div>
+                                <div style={{width: '100%'}}>
+                                    <amp-ad width="100vw" height="320"
+                                        type="adsense"
+                                        data-ad-client="ca-pub-4195448583090836"
+                                        data-ad-slot="8016850265"
+                                        data-auto-format="rspv"
+                                        data-full-width="">
+                                        <div overflow=""></div>
+                                    </amp-ad>
+                                </div>
                             </Grid>
                         </Hidden>
                     </Grid>
