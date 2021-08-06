@@ -90,6 +90,7 @@ const Blog = (props) => {
             <Grid container spacing={2}>
                 {/* Skeleton */}
                 {blog.isLoading ? 
+                    <>
                     <Grid item xs={12} md={4}>
                         <Card style={{maxWidth: "345"}}>
                             <CardHeader
@@ -118,6 +119,63 @@ const Blog = (props) => {
                             </CardActions>
                         </Card>
                     </Grid>
+                    <Grid item xs={12} md={4}>
+                        <Card style={{maxWidth: "345"}}>
+                            <CardHeader
+                                avatar={
+                                    <Skeleton variant="circle" width={45} height={45} animation="wave" />
+                                }                            
+                                title={<Skeleton variant="text" width={200} animation="wave" />}
+                                subheader={<Skeleton variant="text" width={90} animation="wave" />}
+                            />
+                            <NavLink to="/blog/content_id1234" exact>
+                            <CardMedia>
+                                <Skeleton variant="rect" animation="wave" height={214} />
+                            </CardMedia>
+                            <CardContent>
+                                <Skeleton animation="wave" />
+                                <Skeleton animation="wave" />
+                                <Skeleton animation="wave" width={210} />
+                            </CardContent>
+                            </NavLink>
+                            
+                            <CardActions disableSpacing>
+                                <IconButton aria-label="add to favorites">
+                                <FavoriteIcon />
+                                    <Typography variant="body2" color="primary" component="span"><Skeleton animation="wave" width={30} /></Typography>
+                                </IconButton>                                                      
+                            </CardActions>
+                        </Card>
+                    </Grid>
+                    <Grid item xs={12} md={4}>
+                        <Card style={{maxWidth: "345"}}>
+                            <CardHeader
+                                avatar={
+                                    <Skeleton variant="circle" width={45} height={45} animation="wave" />
+                                }                            
+                                title={<Skeleton variant="text" width={200} animation="wave" />}
+                                subheader={<Skeleton variant="text" width={90} animation="wave" />}
+                            />
+                            <NavLink to="/blog/content_id1234" exact>
+                            <CardMedia>
+                                <Skeleton variant="rect" animation="wave" height={214} />
+                            </CardMedia>
+                            <CardContent>
+                                <Skeleton animation="wave" />
+                                <Skeleton animation="wave" />
+                                <Skeleton animation="wave" width={210} />
+                            </CardContent>
+                            </NavLink>
+                            
+                            <CardActions disableSpacing>
+                                <IconButton aria-label="add to favorites">
+                                <FavoriteIcon />
+                                    <Typography variant="body2" color="primary" component="span"><Skeleton animation="wave" width={30} /></Typography>
+                                </IconButton>                                                      
+                            </CardActions>
+                        </Card>
+                    </Grid>
+                    </>
                 :
                     blog.content.data !== undefined ? 
                         blog.content.data.map((data, key) => (
