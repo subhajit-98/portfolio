@@ -1,0 +1,20 @@
+.main_content{
+    min-height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom_error_heading{
+    text-align: center;
+}
+
+.content{
+    font-weight: 200 !important;
+    font-size: 18px !important;
+}
+
+.home_btn{
+    margin-top: 30px;
+    text-align: center;
+}
