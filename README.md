@@ -68,3 +68,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+# Perticals help
+
+https://www.npmjs.com/package/react-particles-js
+https://rpj.bembi.dev/#bubbles
+https://codepen.io/theqahuna/pen/YxBVJg
+-- And random search like (```react-particles-js random color```)
