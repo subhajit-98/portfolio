@@ -72,3 +72,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 https://www.youtube.com/watch?v=eN_99YxG1Po
 https://www.youtube.com/watch?v=HcS_1E4ca9I
+
+# Perticals help
+
+https://www.npmjs.com/package/react-particles-js
+https://rpj.bembi.dev/#bubbles
+https://codepen.io/theqahuna/pen/YxBVJg
+-- And random search like (```react-particles-js random color```)
