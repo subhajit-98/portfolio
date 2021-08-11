@@ -138,14 +138,14 @@ const Projects = () => {
                     :
                     <Grid container spacing={3}>
                         {projects.data.map((data, key) => (
-                            <Grid item xs={6} md={4}>
-                                <Card style={{maxWidth: '545px'}} key={key}>
+                            <Grid item xs={12} md={4}>
+                                <Card style={{maxWidth: '545px', minHeight: '100px'}} key={key}>
                                     <CardMedia
                                         image={ data.project_image }
                                         title="Contemplative Reptile"
                                         style={{height: '140px'}}
                                     />
-                                    <CardContent>
+                                    <CardContent style={{minHeight: '80px'}}>
                                     <Typography gutterBottom variant="h5" component="h2">
                                         {data.project_name}
                                     </Typography>
