@@ -109,9 +109,14 @@ const Education = () => {
                 }
             </Grid>
             <Grid container spacing={2}>
-                <Grid xs={6}>
+                {/* <Grid xs={6}>
                     <NavLink to="/work-experience">
                         <Button className="btn leftbtn" variant="outlined" color="primary" startIcon={ <ArrowBackIcon /> }>Experience</Button>
+                    </NavLink>
+                </Grid> */}
+                <Grid xs={6}>
+                    <NavLink to="/projects">
+                        <Button className="btn leftbtn" variant="outlined" color="primary" startIcon={ <ArrowBackIcon /> }>Project</Button>
                     </NavLink>
                 </Grid>
                 <Grid xs={6}>

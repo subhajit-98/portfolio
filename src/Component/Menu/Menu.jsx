@@ -55,7 +55,7 @@ const Menu = () => {
                         </MenuItem>
                     </NavLink>
                 </MenuList>
-                <MenuList className="menuList" onClick={() => { setMenu(!menu) }}>
+                {/* <MenuList className="menuList" onClick={() => { setMenu(!menu) }}>
                     <NavLink to="/work-experience">
                         <MenuItem>
                             <ListItemIcon>
@@ -64,7 +64,7 @@ const Menu = () => {
                             <Typography variant="inherit">Work Experience </Typography>
                         </MenuItem>
                     </NavLink>
-                </MenuList>
+                </MenuList> */}
                 <MenuList className="menuList" onClick={() => { setMenu(!menu) }}>
                     <NavLink to="/education">
                         <MenuItem>
