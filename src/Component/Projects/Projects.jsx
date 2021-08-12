@@ -173,9 +173,14 @@ const Projects = () => {
                             <Button className="btn leftbtn" variant="outlined" color="primary" startIcon={ <ArrowBackIcon /> }>About</Button>
                         </NavLink>
                     </Grid>
-                    <Grid xs={6}>
+                    {/* <Grid xs={6}>
                         <NavLink to="/work-experience">
                             <Button variant="outlined" color="primary" endIcon={ <ArrowRightAltRoundedIcon /> } className="btn rightbtn">Work Experince</Button>
+                        </NavLink>
+                    </Grid> */}
+                    <Grid xs={6}>
+                        <NavLink to="/education">
+                            <Button variant="outlined" color="primary" endIcon={ <ArrowRightAltRoundedIcon /> } className="btn rightbtn">Qulification</Button>
                         </NavLink>
                     </Grid>
                 </Grid>
