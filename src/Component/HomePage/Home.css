@@ -55,9 +55,17 @@
     font-weight: 800;
     padding: 9px 29px;
     text-transform: capitalize;
+    transition: 2s;
 }
 
 .buttonclass > a > button:hover{
     box-shadow: 0px 0px 12px 4px rgb(63 81 181 / 50%);
     animation-delay: 15s;
+}
+
+
+/*  */
+.day_theme .buttonclass > a > button{
+    color: black;
+    transition: 2s;
 }

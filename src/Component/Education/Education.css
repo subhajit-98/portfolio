@@ -2,4 +2,11 @@
     background-color: #424242 !important;
     color: white !important;
     padding: 15px;
+    transition: 2s;
+}
+
+.day_theme .education_background{
+    background-color: #e4e4e4 !important;
+    color: rgb(0, 0, 0) !important;
+    transition: 2s;
 }

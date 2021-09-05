@@ -27,3 +27,26 @@
     background-color: rgb(53, 51, 51) !important;
     min-width: 300px;
 }
+
+/* Header Nav items style */
+.header_nav_items{
+    width: 100%;
+    float: right;
+    text-align: right;
+}
+
+.header_nav_items a{
+    color: white;
+    padding: 0px 20px 0px 0px;
+    display: inline-flex;
+}
+
+
+/*  */
+.theme_changer{
+    /* width: 100%; */
+    display: flex;
+}
+.theme_changer svg{
+    cursor: pointer;
+}

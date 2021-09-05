@@ -28,6 +28,7 @@ a{
     font-weight: 800 !important;
     padding: 9px 29px !important;
     text-transform: capitalize !important;
+    transition: 2s;
 }
 
 .btn:hover{
@@ -38,4 +39,10 @@ a{
 .leftbtn{
     float: right;
     margin-right: 15px !important;
+}
+
+/*  */
+.day_theme .btn{
+    color: rgb(0, 0, 0) !important;
+    transition: 2s;
 }
