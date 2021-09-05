@@ -45,6 +45,7 @@ function App() {
           <Route component={ Error404 } />
         </Switch>
       </BrowserRouter>
+      <div style={{"paddingBottom": "20px"}}>&nbsp;</div>
     </div>
   );
 }
