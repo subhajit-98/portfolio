@@ -49,6 +49,10 @@
     font-weight: 600;
 }
 
+.day_theme .author_name_create .author_name{
+    color: rgb(0, 0, 0);
+}
+
 .blog_sperate{
     width: 100%;
     border: 1px solid #2b2b2b;

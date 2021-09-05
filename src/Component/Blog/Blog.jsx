@@ -67,7 +67,7 @@ const Blog = (props) => {
 
         if(click_current_page !== currentPage){
             setCurrentPage(click_current_page)
-            blog_api_url = "http://192.168.2.9:8000/api/v1/blog/"+click_current_page+"/";
+            blog_api_url = process.env.REACT_APP_API_URL+"blog/"+click_current_page+"/";
             await axios.get(blog_api_url)
             .then(res => {
                 console.log(res)

@@ -13,7 +13,7 @@ const Blogdetails = (props) => {
     console.log(props.match.params);
     useEffect(async() => {
         if(blog.isLoading){
-            await axios.get("http://192.168.2.9:8000/api/v1/blog/"+props.match.params.content_id+"/")
+            await axios.get(process.env.REACT_APP_API_URL+"blog/"+props.match.params.content_id+"/")
             .then(res => {
                 // console.log(res)
                 setBlog({...blog,
