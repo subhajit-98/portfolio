@@ -9,6 +9,10 @@ import { Helmet } from 'react-helmet';
 import axios from 'axios';
 import SnackbarAlert from '../../Container/Snackbar/Snackbar';
 import Loader from '../../Container/Loader/Loader';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import GitHubIcon from '@material-ui/icons/GitHub';
 import './Contact.css';
 
 const Contact = () => {
@@ -101,6 +105,28 @@ const Contact = () => {
                 // console.log(res); 
                 if(res.data.status == "success"){
                     setContact({isVisible: !contact.isVisible, message: "Thank you for contact with me."});
+                    setFormValue({
+                        first_name:{
+                            data: '',
+                            isError: false,
+                            error_message: ''
+                        },
+                        last_name:{
+                            data: '',
+                            isError: false,
+                            error_message: ''
+                        },
+                        email_id:{
+                            data: '',
+                            isError: false,
+                            error_message: ''
+                        },
+                        message:{
+                            data: '',
+                            isError: false,
+                            error_message: ''
+                        }
+                    })
                 }
             })
             .catch(res => {
@@ -182,7 +208,7 @@ const Contact = () => {
                         <TextField className="input_fields" id="outlined-search" label="Your message..." type="text" variant="outlined"name="message" value={formValue.message.data}onChange={onChangeHandle} rows={4} multiline helperText={message_error_msg} error={message_isError} />
                     </Grid>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid item xs={12} className="contact">
                 { 
                     !contact.isLoading ? 
                     <Button
@@ -198,6 +224,17 @@ const Contact = () => {
                 }
                 </Grid>
             </form>
+            <Grid container spacing={2} className="other_contact">
+                <Grid item xs={12} sm={12}>
+                    <div className="make_line"><span>OR</span></div>
+                </Grid>
+                <Grid item xs={12} sm={12}>
+                    <FacebookIcon onClick={() => window.open("http://www.facebook.com", "_blank")} />
+                    <LinkedInIcon />
+                    <InstagramIcon />
+                    <GitHubIcon />
+                </Grid>
+            </Grid>
             <Grid container spacing={2}>
                 <Grid xs={12} className="backBtnDiv">
                     <NavLink to="/education">
