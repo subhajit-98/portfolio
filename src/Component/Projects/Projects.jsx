@@ -15,6 +15,7 @@ const Projects = () => {
     const [loading, setLoading] = useState(true);
     const [projects, setProjects] = useState(null);
     const [modaldetails, setModaldetails] = useState({"content": '', 'link': '', 'is_project_download': '', 'project_download_link': ''})
+    const IsDayTheme = JSON.parse(localStorage.getItem('IsDayTheme'));
 
     const handleClose = () => {
         setModal(!modal)
@@ -139,7 +140,7 @@ const Projects = () => {
                     <Grid container spacing={3}>
                         {projects.data.map((data, key) => (
                             <Grid item xs={12} md={4}>
-                                <Card style={{maxWidth: '545px', minHeight: '100px'}} key={key}>
+                                <Card style={{maxWidth: '545px', minHeight: '100px', boxShadow: "0px 0px 11px 2px black",}} key={key}>
                                     <CardMedia
                                         image={ data.project_image }
                                         title="Contemplative Reptile"
@@ -185,7 +186,7 @@ const Projects = () => {
                     </Grid>
                 </Grid>
             </Container>
-            <Dialog fullWidth={true} minWidth="md" className="changeModalTheme" open={modal} aria-labelledby="responsive-dialog-title" onClose={ handleClose } >
+            <Dialog fullWidth={true} minWidth="md" className={(IsDayTheme) ? "daytheme" : "changeModalTheme" } open={modal} aria-labelledby="responsive-dialog-title" onClose={ handleClose } >
                 <DialogTitle id="responsive-dialog-title" className="modalTitle">Project Details</DialogTitle>
                 <DialogContent>
                     <DialogContentText className="modalContent">
