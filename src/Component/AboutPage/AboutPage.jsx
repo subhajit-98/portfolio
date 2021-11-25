@@ -9,6 +9,7 @@ import ChildFriendlyRoundedIcon from '@material-ui/icons/ChildFriendlyRounded';
 import AppsRoundedIcon from '@material-ui/icons/AppsRounded';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import ArrowRightAltRoundedIcon from '@material-ui/icons/ArrowRightAltRounded';
+import ProfilePic from './profile_avator.png';
 import './About.css';
 
 const AboutPage = () => {
@@ -24,7 +25,17 @@ const AboutPage = () => {
             <PageTitle title="About" />
             <Grid container spacing={2}>
                 <Grid xs={12}>
-                    <Timeline align="alternate">
+                    <Timeline align="left">
+                        <TimelineItem>
+                            <TimelineOppositeContent>
+                            </TimelineOppositeContent>
+                            <TimelineSeparator>
+                                <img className="profile_pic" src={ProfilePic} width="300px" height="200px"/>
+                                <TimelineConnector className="lineHeight" />
+                            </TimelineSeparator>
+                            <TimelineContent>
+                            </TimelineContent>
+                        </TimelineItem>
                         <TimelineItem>
                             <TimelineOppositeContent>
                                 <Typography variant="h6" color="info" className="name_title_heading">Name</Typography>
@@ -50,7 +61,7 @@ const AboutPage = () => {
                                 <TimelineConnector className="lineHeight" />
                             </TimelineSeparator>
                             <TimelineContent>
-                                <Typography variant="h4">India, West Bengal</Typography>
+                                <Typography variant="h5">India, West Bengal</Typography>
                             </TimelineContent>
                         </TimelineItem>
                         <TimelineItem>
@@ -64,7 +75,7 @@ const AboutPage = () => {
                                 <TimelineConnector className="lineHeight" />
                             </TimelineSeparator>
                             <TimelineContent>
-                                <Typography variant="h4">5<sup>th</sup> January, 1998</Typography>
+                                <Typography variant="h5">5<sup>th</sup> January, 1998</Typography>
                             </TimelineContent>
                         </TimelineItem>
                         <TimelineItem>
